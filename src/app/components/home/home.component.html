@@ -1,0 +1,65 @@
+<h1>Home Component</h1>
+<hr />
+<h2>引入图片</h2>
+<img src="assets/images/01.png" alt="img">
+
+<img [src]="picUrl" alt="pic img">
+
+<p>循环显示数据索引</p>
+<ul>
+  <li *ngFor="let item of list; let key = index;">{{key}} -- {{item.title}}</li>
+</ul>
+<hr />
+
+<p>条件判断*ngIf</p>
+<div *ngIf="flag">
+  <img src="assets/images/02.png" alt="img">
+</div>
+<div *ngIf="!flag">
+  <img src="assets/images/01.png" alt="img">
+</div>
+
+<ul>
+  <li *ngFor="let item of list; let key = index;">
+    <span *ngIf="key === 2" class="red">{{item.title}}</span>
+    <span *ngIf="key !== 2" class="green">{{item.title}}</span>
+  </li>
+</ul>
+
+<p>条件判断*ngSwitch</p>
+<div [ngSwitch]="orderStatus">
+  <p *ngSwitchCase="1">已支付</p>
+  <p *ngSwitchCase="2">已支付且确认</p>
+  <p *ngSwitchCase="3">已发货</p>
+  <p *ngSwitchCase="4">已收货</p>
+  <p *ngSwitchCase="5">无效</p>
+</div>
+
+<p>ngClass、ngStyle</p>
+<div>
+  尽量不要用DOM来改变class
+</div>
+
+<div [ngClass]="{'red': true, 'center': false, 'large': true}">ngClass</div>
+
+<li *ngFor="let item of list; let key = index" [ngClass]="{'red': key===1}" >{{item}}</li>
+
+<p [ngStyle]="{'color': 'red', 'background-color': 'yellow'}">{{'ssssssss'}}</p>
+
+<p>now is {{myDate | date: 'YYYY-MM-DD HH:mm:ss'}}</p>
+
+<h3>事件</h3>
+<button (click)="run()">点击</button>
+<button (click)="changeGoods()">改变goods值</button>
+<p>{{goods}}</p>
+
+<h3>表单事件</h3>
+
+<input type="text" (keydown)="keyDown($event)" />
+<input type="text" (keyup)="keyUp($event)">
+
+<p (click)="changeColor($event)">点我变色</p>
+
+<h3>双向数据绑定 --- MVM 只针对表单</h3>
+<input type="text" [(ngModel)]="keywords">{{keywords}}
+<button (click)="changeKW()">改变keywords</button>
