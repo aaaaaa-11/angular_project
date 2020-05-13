@@ -1,0 +1,25 @@
+<h1 class="center">搜索功能</h1>
+<br />
+<div class="todo-wrapper">
+  <div class="todo-header">
+    <p>添加待进行的事情：</p>
+    <input type="text" (keydown)="addToDo($event)">
+  </div>
+  <ul class="todo-list" *ngIf="todoList.length">
+    <li class="todo-item" *ngFor="let item of todoList; let key = index">
+      <div *ngIf="!item.done">
+        <span (click)="addDone(item, key)"></span>
+        <p>{{item.do}}</p>
+      </div>
+    </li>
+  </ul>
+  <ul class="done-list" *ngIf="doneList.length">
+    <li class="done-item" *ngFor="let item of doneList; let key = index">
+      <div *ngIf="item.done">
+        <span (click)="addToDoFromDone(item, key)"></span>
+        <p>{{item.do}}</p>
+        <span class="del" (click)="delDone(key)"></span>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,12 +1,12 @@
 npm install -g @angular/cli  # 全局安装angular脚手架
 
-ng new 项目名  # 创建angular项目并自动npm install
+## ng new 项目名  # 创建angular项目并自动npm install
 ng new 项目名 --skip-install  # 创建angular项目跳过安装npm install
 
 ng new 项目 之后，会自动npm install，可以Ctr+C，然后cd 项目名，再使用cnpm i
 如果失败，就使用npm install
 
-ng serve --open  # 运行项目
+## ng serve --open  # 运行项目
 
 目录结构：
 e2e——在e2e/下是端到端（End-to-End）测试
@@ -56,10 +56,10 @@ export class 组件名 implements OnInit {
 <div>{{数据名}}</div>
 
 模板里面绑定属性：
-<div [html属性名]="数据名"></div>
+[html属性名]="数据名"
 
 模板中绑定html
-<div [innerhtml]="数据名"></div> // 将数据解析为html，作为div的内容
+[innerhtml]="数据名" // 将数据解析为html，作为div的内容
 
 模板中允许简单的运算：
 {{1 + 1}}
