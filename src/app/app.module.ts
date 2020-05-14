@@ -20,11 +20,13 @@ import { SearchComponent } from './components/search/search.component';
 import { StorageService } from './services/storage.service';
 import { DomComponent } from './components/dom/dom.component';
 import { TransitionComponent } from './components/transition/transition.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ParentComponent } from './components/parent/parent.component';
 
 // @NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
   declarations: [ /* 配置当前项目运行的组件 */
-    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent
+    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent
   ],
   imports: [ /* 配置当前模块运行依赖的其他模块 */
     BrowserModule,

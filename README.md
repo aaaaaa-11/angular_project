@@ -122,3 +122,24 @@ dom操作
 但是如果DOM元素由angular指令控制显示，则在ngOnInit可能获取不到
 可以在ngAfterViewInit中获取
 2. ViewChild
+
+
+Angular父子组件通讯
+父组件 -> 子组件：
+值：<子组件  [子组件属性]="父组件属性" />
+方法：<子组件  [子组件属性]="父组件方法" />
+子组件可以接收父组件：<子组件  [子组件属性]="this" />  # 注意不要循环调用
+
+子 -> 父：
+<子组件 #xxx />  // xxx为自定义名称，用来代表子组件
+@ViewChildu('xxx') yyy:any  // 父组件中通过ViewChild获取子组件，赋值给自定义变量yyy
+// 父组件中可以使用子组件方法和值：this.yyy.方法 或 this.yyy.属性
+
+@output
+子组件：@output() private xxx = new EventEimtter()
+this.xxx.emit(需要传给父组件的数据)
+父组件：
+<子组件 (xxx)="父组件方法($event)" />
+父组件方法(e) {
+  // e就是子组件传给父组件的数据
+}

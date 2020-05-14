@@ -1,3 +1,10 @@
 
-<div #header>Header Component
+<div #header>{{title}} Header Component
+  <p>接收父组件传值：{{msg}}</p>
+  <!-- <div>{{parent | json}}</div> -->
+  <div>{{parent.title}}</div>
+
+  <br>
+  <br>
+  <button (click)="callParentMethods()">调用父组件中的方法</button>
 </div>
