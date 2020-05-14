@@ -93,3 +93,32 @@ methods1 (e) {
 双向数据绑定：
 只针对表单
 先引入FormsModule
+
+
+angular当前版本不支持在同一个标签中同时使用*ngIf和*ngFor两个指令
+解决：
+1.把指令分散到两个标签中
+2.在同一个标签中使用*ngfor和[hidden]="条件"
+
+
+Angular服务
+ng g s 目录/服务名  # 创建服务
+在app.modules.ts中引入并声明
+使用时，在组件中引入并初始化：
+import { 服务名 } from '服务path'
+1.不推荐
+let 变量 = new 服务名()
+// 使用变量
+2.constructor (public 变量:服务名) {
+  // 使用变量
+}
+Angular中所有组件都可以引入并调用服务
+服务之间也可以相互调用
+
+
+dom操作
+1. 原生js
+获取DOM节点，可以在ngOnInit里获取，
+但是如果DOM元素由angular指令控制显示，则在ngOnInit可能获取不到
+可以在ngAfterViewInit中获取
+2. ViewChild

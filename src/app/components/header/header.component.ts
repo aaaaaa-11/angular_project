@@ -12,4 +12,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  run () {
+    console.log('header methods in header component in dom component')
+  }
+
 }

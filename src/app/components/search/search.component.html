@@ -1,0 +1,20 @@
+<div class="search-wrapper">
+  <h1 class="stitle">搜索</h1>
+  <div class="input">
+    <input type="text" class="search-input" [(ngModel)]="sinput" (keyup)="addHistory($event)">
+    <span class="search-btn" (click)="search()">搜索</span>
+  </div>
+  <div class="history-wrapper">
+    <h3>搜索历史
+      <span class="clear-history" (click)="clearHistory()">清空</span>
+    </h3>
+    <div class="list-wrapper">
+      <p *ngIf="!historyLists || !historyLists.length">空空如也~</p>
+      <ul class="history-list" *ngIf="historyLists.length">
+        <li class="history-item" *ngFor="let item of historyLists; let i = index">{{item}}
+          <span class="clear-btn" (click)="clearHItem(i)">x</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

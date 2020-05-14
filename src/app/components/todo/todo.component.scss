@@ -31,6 +31,22 @@
     div {
       span {
         border-color: #fff;
+        font-size: 30px;
+        line-height: 26px;
+        position: relative;
+        &:first-child::before {
+          content: "";
+          display: block;
+          width: 11px;
+          height: 30px;
+          border: 1px solid #fff;
+          position: absolute;
+          transform: rotate(45deg);
+          top: -5px;
+          left: 15px;
+          border-top: none;
+          border-left: none;
+        }
       }
     }
   }

@@ -1,0 +1,22 @@
+<h1>DOM操作演示</h1>
+<br />
+<br />
+<app-header #header></app-header>
+<button (click)="getChildMethods()">getChildMethods</button>
+
+<br />
+<br />
+
+<hr />
+<h3>原生js操作演示</h3>
+<div class="box" id="box">this is a box</div>
+
+<br />
+
+<div id="box1" *ngIf="dflag">this is box1</div>
+
+<br />
+<br />
+<hr />
+<h3>ViewChild</h3>
+<div class="mybox" #mybox>a dom element</div>
