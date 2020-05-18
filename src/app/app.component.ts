@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'] // css
 })
 export class AppComponent {
-  title = 'ngdemo02'; // 定义属性
+  public title:string = 'ngdemo02'; // 定义属性
+  
+  public flag:boolean = true
+
+  changeTitle () {
+    this.title = 'new title'
+  }
+
+  changeFlag () {
+    this.flag = !this.flag
+  }
 }

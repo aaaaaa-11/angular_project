@@ -143,3 +143,93 @@ this.xxx.emit(需要传给父组件的数据)
 父组件方法(e) {
   // e就是子组件传给父组件的数据
 }
+
+Angular中的生命周期
+0. constructor()
+不是组件生命周期函数
+除了使用简单的值对局部变量进行初始化之外，什么都不应该做
+
+1. ngOnChanges()
+主要用于父子组件传值时，数据改变会触发
+如果父子组件传值时，数据并没有改变，不会触发
+
+2. ngOnInit()
+一般可以请求数据
+
+3. ngDoCheck()
+在ngOnInit之后触发，如果数据改变或未改变所做的操作
+
+4. ngAfterContentInit()
+组件渲染完成后触发
+
+5. ngAfterContentChecked()
+组件初始化之后的自定义操作
+
+6. ngAfterViewOnInit()
+初始化完组件视图及子组件视图，可做DOM操作
+
+7. ngAfterViewChecked()
+初始化完视图后自定义操作
+
+7. ngOnDestory()
+组件销毁时的操作
+卸载组件时会触发
+
+
+Rxjs
+ReactiveX JavaScript
+ReactiveX是针对异步数据流的编程
+能以同步编程的方式异步处理数据
+
+目前常见的异步编程方法：
+1. 回调函数
+2. 事件监听/发布订阅
+3. Promise
+4. Rxjs
+
+Rxjs中最常用的模块Observable和fromEvent
+import { Observable } form 'rxjs' // 引入Observable
+f () {
+  return new Observable((observer) => {
+  observer.next(data)
+  observer.error(data)
+})
+}
+
+let data = f()
+data.subscribe(data => { // 处理data数据 })
+
+Rxjs和Promise用法基本类似，但是Rxjs功能更强大，可以中途撤回、可以发射多个值、提供了多种工具函数等
+
+
+Rxjs unsubscribe取消订阅
+
+let rxjs = data.subscribe(data => { // 处理data数据 })
+rxjs.unsubscribe() // 取消订阅
+
+
+Rxjs订阅后多次执行
+f () {
+  return new Observable((observer) => {
+    setInterval(() => { // 可以多次执行
+      observer.next(data)
+    })
+  })
+}
+
+Angular6.x之前使用Rxjs的工具函数map、filter
+Angular6.x之后使用以前的rxjs方法，必须安装rxjs-compat模块
+data.pipe(
+  // pipe中可使用多个方法，下面的方法中的数据是上面方法处理后的数据
+  filter(data => {
+    if (条件) { // 根据条件筛选数据
+      return true
+    }
+  }),
+  map(data => {
+    return xxx // 返回经过处理的数据
+  })
+)
+.subscribe(data => {
+  // data是经过上面处理后的数据
+})
