@@ -233,3 +233,57 @@ data.pipe(
 .subscribe(data => {
   // data是经过上面处理后的数据
 })
+
+Angular数据交互
+Angular5.x之后和服务器交互使用的是HttpClientModule模块
+
+app.module.ts中引入
+import { HttpClientModule } from '@angular/common/http'
+在modules中配置
+
+在需要使用的组件中引入
+import { HttpClient, HttpHeaders } from '@angular/common/http' // HttpHeaders是post方法中需要用到的
+public http:HttpClient // 在constructor中定义一个变量
+f () {
+  this.http.get(api).subscribe(res => {
+    // 处理res
+  })
+const httpOptions = {headers: new HttpHeaders({ 'Content-Type': 'application/json'})} // 手动设置请求的类型
+  this.http.post(api, {数据}, httpOptions).subscribe(res => {
+    // 处理res
+  })
+}
+
+使用第三方模块中的axios
+npm i axios --save
+创建一个服务，在服务中引入axios模块并使用：
+import axios from 'axios'
+axiosGetMethods () {
+  return new Promise((resolve,reject) => { // 通过Promise返回axios结果
+    axios.get(api)
+      .then(res => {
+        // 处理res
+        resolve(res) // 返回请求成功的结果
+      })
+      .catch()
+      .then()
+  })
+}
+
+在app.module.ts中引入该服务
+import 服务名 from 'axios服务路径'
+在providers中配置
+
+在需要使用axios第三方模块的组件中导入并使用：
+import 服务名 from 'axios服务路径'
+
+constructor (public 变量名:服务名) {}
+
+f () {
+  this.变量名.axiosGetMethods(api)
+  .then(res => {
+    // 处理res
+  })
+}
+
+

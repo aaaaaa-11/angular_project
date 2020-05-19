@@ -1,0 +1,16 @@
+<p>axios works!</p>
+<button (click)="getData()">axios请求数据</button>
+<ul>
+  <li *ngFor="let item of list; let i=index">{{item.title}}</li>
+</ul>
+
+<br>
+
+<button (click)="goLogin()">login</button>
+
+<br>
+<button (click)="getJsonpData()">get JSONP data（跨域的解决方法之一）</button>
+
+<br>
+<br>
+<button (click)="getAxiosData()">axios</button>
