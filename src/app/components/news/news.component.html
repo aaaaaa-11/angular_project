@@ -1,4 +1,18 @@
 <h1>News Components</h1>
+
+<br>
+<a [routerLink]="[ '/newscontent/0' ]" routerLinkActive="active">跳转到详情页</a>
+<ul>
+  <li *ngFor="let item of arr, let key = index">
+    <!-- <a href="/newscontent?data=1">{{key}} --- {{item}}</a> -->
+    <!-- <a [routerLink]="[ '/newscontent' ]" [queryParams] = "{aid: key}">{{key}} --- {{item}}</a> -->
+
+    <!-- 动态路由 -->
+    <a [routerLink]="[ '/newscontent/', key ]">跳转---{{key}}</a>
+  </li>
+</ul>
+<br>
+
 <hr />
 <h1>{{ title }}</h1>
 

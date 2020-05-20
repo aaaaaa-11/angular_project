@@ -9,6 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 // 引入httpClientModule
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'
+
+// 引入并配置服务
+import { RequestService } from './services/request.service';
+import { HttpserviceService } from './services/httpservice.service';
+
+
 // 根组件
 import { AppComponent } from './app.component';
 
@@ -26,14 +32,12 @@ import { ParentComponent } from './components/parent/parent.component';
 import { LifecircleComponent } from './components/lifecircle/lifecircle.component';
 import { RequestComponent } from './components/request/request.component';
 import { AxiosComponent } from './components/axios/axios.component';
-// 引入并配置服务
-import { RequestService } from './services/request.service';
-import { HttpserviceService } from './services/httpservice.service'
+import { ProductComponent } from './components/product/product.component';
 
 // @NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
   declarations: [ /* 配置当前项目运行的组件 */
-    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent, LifecircleComponent, RequestComponent, AxiosComponent
+    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent, LifecircleComponent, RequestComponent, AxiosComponent, ProductComponent
   ],
   imports: [ /* 配置当前模块运行依赖的其他模块 */
     BrowserModule,

@@ -287,3 +287,74 @@ f () {
 }
 
 
+Angular中的路由
+路由就是根据不同的url地址，动态地让根组件挂在不同的组件，来实现一个单页面应用
+用ng new 项目名 创建项目时，会提醒是否创建路由，选择Y
+路由文件：~/src/app/app-routing.mudules.ts
+在路由文件中导入组件，并配置路由：
+import 组件名 from '组件路径'
+
+const routes:Routes = [
+  {
+    path: '/path',
+    compnent: 组件名
+  },
+  {
+    path: '**' // 匹配不到的路由
+    component: 组件名
+  }
+]
+
+在根组件app.component.html中，有一个router-outlet标签，根据路由动态展示组件
+
+路由跳转：
+<a routerLink="/path" routerLinkActice="active">点击</a> // active是选中的样式名，可自定义
+
+路由传参：
+get:
+<a routerLink="/path" [queryParams]="{key: val}">点击跳转</a>
+接收路由参数：
+import { ActivatedRoute } form '@angular/route'
+constructor (public route:ActivatedRoute) {}
+
+get:
+this.route.queryParams.subscribe((data) => {
+  // 处理data
+})
+
+动态路由：
+<a [routerLink]="path, routeParams">跳转</a>
+配置动态路由： { path: '/path/:param', component: TestComponent }
+
+接收：
+this.router.params.subscribe(data => {
+  // 处理data
+})
+
+js跳转路由
+
+
+<button (click)="goPage()">跳转</button>
+
+在路由跳转的组件中引入Router：
+import { Router } from '@angular/router'
+
+constructor (public router:Router)
+
+goPage () {
+  this.router.navigate(['/path', params])
+}
+
+
+get传值路由跳转
+引入NavigationExtras模块：
+import { Router, NavigationExtras } from '@angular/router'; // 不引入NavigateExtras仍然可以跳转
+
+goPage() {
+  let queryParams:NavigationExtras = {
+    queryParams: {
+      'id': 1
+    }
+  }
+  this.router.navigate(['/path'], queryParams)
+}

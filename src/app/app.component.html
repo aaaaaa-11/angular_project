@@ -7,15 +7,32 @@
 
 <!-- Header -->
 <div class="app-header">
-  <div class="h-user-info">
+  <!-- <ul class="header-nav">
+    <li class="nav-item">
+      <a [routerLink]="'/index'">首页</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/news">新闻</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="'/product'">商品</a>
+    </li>
+  </ul> -->
+  <a [routerLink]="[ '/index' ]" routerLinkActive="active">首页</a>
+  <a [routerLink]="[ '/product' ]" routerLinkActive="active">商品</a>
+  <a [routerLink]="[ '/news' ]" routerLinkActive="active">新闻</a>
+
+
+  <!-- <div class="h-user-info">
     <div class="h-u-avatar">
       <img src="../favicon.ico" alt="avatar">
     </div>
-  </div>
+  </div> -->
 </div>
 
 <!-- body -->
 <div class="app-body">
+  <p>根组件</p>
   <!-- <app-home></app-home> -->
   <!-- <app-news></app-news> -->
   <!-- <app-form></app-form> -->
@@ -34,7 +51,7 @@
     <span *ngIf="flag">卸载组件</span>
   </button> -->
   <!-- <app-request></app-request> -->
-  <app-axios></app-axios>
+  <!-- <app-axios></app-axios> -->
 </div>
 
 <!-- footer -->
@@ -42,4 +59,6 @@
 
 <!-- tabbar -->
 <div class="app-tabbar"></div>
+
+<!-- 放动态加载的组件 -->
 <router-outlet></router-outlet>
