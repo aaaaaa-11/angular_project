@@ -1,0 +1,38 @@
+<div class="home-index">
+  <div class="header-wrapper">
+    <ul class="header-nav">
+      <li class="nav-item">
+        <a href="#">
+          <img src="../../../assets/images/01.png" alt="">
+          <p>热销榜</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          <img src="../../../assets/images/02.png" alt="">
+          <p>点过的菜</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          <img src="../../../assets/images/01.png" alt="">
+          <p>猜你喜欢</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="product-wrapper">
+    <section class="pcate" *ngFor="let list of pLists; let i=index">
+      <h3 class="ptitle">{{list.title}}</h3>
+      <ul class="plist">
+        <li class="pitem" *ngFor="let item of list.list; let idx=index">
+          <a [routerLink]="[ '/pcontent', item._id ]">
+            <img [src]="domain + item.img_url" alt="">
+            <p>{{item.title}}</p>
+            <p>¥{{item.price}}</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

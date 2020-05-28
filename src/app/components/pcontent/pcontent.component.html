@@ -1,0 +1,23 @@
+<div class="pcontent-index">
+  <div class="img-wrapper">
+    <a [routerLink]="['/home']">
+      <div class="back">返回</div>
+    </a>
+    <img [src]="domain + food.img_url" alt="">
+    <p>{{food.title}}</p>
+    <p>¥{{food.price}} / 份</p>
+  </div>
+  <div class="content">
+    <h4>商品详情</h4>
+    <div class="pcontent" [innerHTML]="food.content"></div>
+  </div>
+  <div class="tab-bar">
+    <span>数量：</span>
+    <div class="btn">
+      <button class="btn-minus">-</button>
+      <input type="text">
+      <button class="btn-add">+</button>
+    </div>
+    <div class="add">加入购物车</div>
+  </div>
+</div>
