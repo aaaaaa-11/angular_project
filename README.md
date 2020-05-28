@@ -358,3 +358,14 @@ goPage() {
   }
   this.router.navigate(['/path'], queryParams)
 }
+
+
+子路由：
+<a [routerLink]="[/path, params]"></a>
+<router-outlet></router-outlet>
+
+注意：路由组件需要在app.modules.ts中引入并在declerations中配置
+
+
+自定义模块
+Angular内置模块
