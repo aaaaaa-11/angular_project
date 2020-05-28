@@ -5,60 +5,9 @@
   }
 </style>
 
-<!-- Header -->
-<div class="app-header">
-  <!-- <ul class="header-nav">
-    <li class="nav-item">
-      <a [routerLink]="'/index'">首页</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="/news">新闻</a>
-    </li>
-    <li class="nav-item">
-      <a [routerLink]="'/product'">商品</a>
-    </li>
-  </ul> -->
-  <a [routerLink]="[ '/homepage' ]" routerLinkActive="active">首页</a>
-  <a [routerLink]="[ '/productpage' ]" routerLinkActive="active">商品</a>
-  <!-- <a [routerLink]="[ '/news' ]" routerLinkActive="active">新闻</a> -->
-
-
-  <!-- <div class="h-user-info">
-    <div class="h-u-avatar">
-      <img src="../favicon.ico" alt="avatar">
-    </div>
-  </div> -->
+<div class="container">
+  <h1>首页</h1>
 </div>
-
-<!-- body -->
-<div class="app-body">
-  <!-- <p>根组件</p> -->
-  <!-- <app-home></app-home> -->
-  <!-- <app-news></app-news> -->
-  <!-- <app-form></app-form> -->
-  <!-- <app-todo></app-todo> -->
-  <!-- <app-search></app-search> -->
-  <!-- <app-dom></app-dom> -->
-  <!-- <app-transition></app-transition> -->
-  <!-- <app-parent></app-parent> -->
-  <!-- <app-lifecircle [title]="title" *ngIf="flag"></app-lifecircle>
-  <br>
-  <br>
-  <p>根组件title: {{title}} --- <button (click)="changeTitle()">changeTitle</button></p>
-  <br>
-  <button (click)="changeFlag()">
-    <span *ngIf="!flag">挂载组件</span>
-    <span *ngIf="flag">卸载组件</span>
-  </button> -->
-  <!-- <app-request></app-request> -->
-  <!-- <app-axios></app-axios> -->
-</div>
-
-<!-- footer -->
-<div class="app-footer"></div>
-
-<!-- tabbar -->
-<div class="app-tabbar"></div>
 
 <!-- 放动态加载的组件 -->
 <router-outlet></router-outlet>
