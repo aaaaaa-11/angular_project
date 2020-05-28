@@ -33,12 +33,17 @@ import { LifecircleComponent } from './components/lifecircle/lifecircle.componen
 import { RequestComponent } from './components/request/request.component';
 import { AxiosComponent } from './components/axios/axios.component';
 import { ProductComponent } from './components/product/product.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { WelcomeComponent } from './components/homepage/welcome/welcome.component';
+import { SettingComponent } from './components/homepage/setting/setting.component';
+import { ProductpageComponent } from './components/productpage/productpage.component';
+import { PcateComponent } from './components/productpage/pcate/pcate.component';
+import { PlistComponent } from './components/productpage/plist/plist.component';
 
 // @NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
   declarations: [ /* 配置当前项目运行的组件 */
-    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent, LifecircleComponent, RequestComponent, AxiosComponent, ProductComponent, WelcomeComponent
+    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent, LifecircleComponent, RequestComponent, AxiosComponent, ProductComponent, HomepageComponent, WelcomeComponent, SettingComponent, ProductpageComponent, PcateComponent, PlistComponent
   ],
   imports: [ /* 配置当前模块运行依赖的其他模块 */
     BrowserModule,

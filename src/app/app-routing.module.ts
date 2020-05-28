@@ -9,7 +9,11 @@ import { NewsComponent } from './components/news/news.component'
 import { NewscontentComponent } from './components/newscontent/newscontent.component';
 import { ProductcontentComponent } from './components/productcontent/productcontent.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { WelcomeComponent } from './components/homepage/welcome/welcome.component';
+  import { WelcomeComponent } from './components/homepage/welcome/welcome.component';
+  import { SettingComponent } from './components/homepage/setting/setting.component';
+import { ProductpageComponent } from './components/productpage/productpage.component';
+  import { PcateComponent } from './components/productpage/pcate/pcate.component';
+  import { PlistComponent } from './components/productpage/plist/plist.component';
 
 const routes: Routes = [
   {
@@ -33,18 +37,44 @@ const routes: Routes = [
     component: ProductcontentComponent
   },
   {
-    path: '**',
-    redirectTo: 'home'
-  },
-  {
     path: 'homepage',
     component: HomepageComponent,
     children: [
+      {
+        path: 'welcome',
+        component: WelcomeComponent
+      },
+      {
+        path: 'setting',
+        component: SettingComponent
+      },
+      {
+        path: '**',
+        component: WelcomeComponent
+      }
     ]
   },
   {
-    path: 'welcome',
-    component: WelcomeComponent
+    path: 'productpage',
+    component: ProductpageComponent,
+    children: [
+      {
+        path: 'pcate',
+        component: PcateComponent
+      },
+      {
+        path: 'plist',
+        component: PlistComponent
+      },
+      {
+        path: '**',
+        component: PcateComponent
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 ];
 
