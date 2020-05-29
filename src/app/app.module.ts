@@ -32,7 +32,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { LifecircleComponent } from './components/lifecircle/lifecircle.component';
 import { RequestComponent } from './components/request/request.component';
 import { AxiosComponent } from './components/axios/axios.component';
-import { ProductComponent } from './components/product/product.component';
+// import { ProductComponent } from './components/product/product.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { WelcomeComponent } from './components/homepage/welcome/welcome.component';
 import { SettingComponent } from './components/homepage/setting/setting.component';
@@ -40,17 +40,24 @@ import { ProductpageComponent } from './components/productpage/productpage.compo
 import { PcateComponent } from './components/productpage/pcate/pcate.component';
 import { PlistComponent } from './components/productpage/plist/plist.component';
 
+// 组件较多时，加载会慢，解决：模块化
+// 引入自定义模块
+import { UserModule } from './module/user/user.module'
+import { ProductModule } from './module/product/product.module'
+
 // @NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
   declarations: [ /* 配置当前项目运行的组件 */
-    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent, LifecircleComponent, RequestComponent, AxiosComponent, ProductComponent, HomepageComponent, WelcomeComponent, SettingComponent, ProductpageComponent, PcateComponent, PlistComponent
+    AppComponent, NewsComponent, HomeComponent, HeaderComponent, FormComponent, TodoComponent, SearchComponent, DomComponent, TransitionComponent, FooterComponent, ParentComponent, LifecircleComponent, RequestComponent, AxiosComponent, HomepageComponent, WelcomeComponent, SettingComponent, ProductpageComponent, PcateComponent, PlistComponent
   ],
   imports: [ /* 配置当前模块运行依赖的其他模块 */
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    UserModule,
+    ProductModule
   ],
   providers: [RequestService, HttpserviceService], /* 配置项目所需的服务 */
   bootstrap: [AppComponent] /* 指定应用的主视图 */

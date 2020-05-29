@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // 引入组件
 import { IndexComponent } from './components/index/index.component';
-import { ProductComponent } from './components/product/product.component'
+// import { ProductComponent } from './components/product/product.component'
 import { NewsComponent } from './components/news/news.component'
 import { NewscontentComponent } from './components/newscontent/newscontent.component';
 import { ProductcontentComponent } from './components/productcontent/productcontent.component';
@@ -28,10 +28,10 @@ const routes: Routes = [
     path: 'newscontent/:aid',
     component: NewscontentComponent
   },
-  {
-    path: 'product',
-    component: ProductComponent
-  },
+  // {
+  //   path: 'product',
+  //   component: ProductComponent
+  // },
   {
     path: 'productcontent/:pid',
     component: ProductcontentComponent

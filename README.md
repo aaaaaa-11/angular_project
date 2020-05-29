@@ -361,11 +361,40 @@ goPage() {
 
 
 子路由：
-<a [routerLink]="[/path, params]"></a>
-<router-outlet></router-outlet>
+{
+  path: '/pathOfParent',
+  component: ParentComponent,
+  children: [
+    {
+      path: '/pathOfChild/:params',
+      component: ChildComponent
+    }
+  ]
+}
+<a [routerLink]="[/pathOfParent/pathOfChild, params]">点击跳转路由</a>
+<router-outlet></router-outlet> // 展示路由
 
 注意：路由组件需要在app.modules.ts中引入并在declerations中配置
 
 
 自定义模块
-Angular内置模块
+Angular内置模块：FormModule……
+自定义模块：
+项目较小时，不建议自定义模块
+当组件较多时，加载会慢，可以将组件模块化。
+并且自定义模块可以实现路由懒加载。
+
+
+ng g module module/user  // 创建user模块
+ng g c module/user  // 创建user模块的根组件
+ng g s module/user/services/common  // 创建user模块里的服务common
+ng g m module/user/components/profile  // 创建user模块里的其他组件
+
+在app.module.ts中引入自定义模块：
+import { UserModule } from './module/user/user.module'
+在imports中配置
+
+因为user.module.ts中已经引入了user模块根组件，而user.module.ts在app.module.ts中引入了，所以可以在根组件中使用user模块根组件，但是user模块里的其他组件默认无法在其他模块中使用，除非在user.module.ts中暴露出来：
+exports: [OtherComponentsOfUserModule]
+
+
