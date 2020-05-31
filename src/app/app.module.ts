@@ -42,8 +42,6 @@ import { PlistComponent } from './components/productpage/plist/plist.component';
 
 // 组件较多时，加载会慢，解决：模块化
 // 引入自定义模块
-import { UserModule } from './module/user/user.module'
-import { ProductModule } from './module/product/product.module'
 
 // @NgModule装饰器，@NgModule接受一个元数据对象，告诉Angular如何编译和启动应用
 @NgModule({
@@ -55,9 +53,7 @@ import { ProductModule } from './module/product/product.module'
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule,
-    UserModule,
-    ProductModule
+    HttpClientJsonpModule
   ],
   providers: [RequestService, HttpserviceService], /* 配置项目所需的服务 */
   bootstrap: [AppComponent] /* 指定应用的主视图 */

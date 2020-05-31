@@ -398,3 +398,13 @@ import { UserModule } from './module/user/user.module'
 exports: [OtherComponentsOfUserModule]
 
 
+路由模块懒加载：
+在app-routing.module.ts文件中配置路由，并将其对应的模块以() => import('url').then(mod => mod.Module)方式引入。
+例如：
+app-routing.module.ts：
+route = [
+  {
+    path: 'user',
+    loadChildren: () => import('./module/user/user.module').then(mod => mod.UserModule)
+  }
+]

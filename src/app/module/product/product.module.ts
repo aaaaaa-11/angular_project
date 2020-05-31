@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { ProductRoutingModule } from './product-routing.module';
 import { ProductComponent } from './product.component';
 import { PlistComponent } from './components/plist/plist.component';
-import { CarComponent } from './components/car/car.component';
-import { PinfoComponent } from './components/pinfo/pinfo.component';
-
+import { CartComponent } from './components/cart/cart.component';
+import { PcontentComponent } from './components/pcontent/pcontent.component';
 
 
 @NgModule({
-  declarations: [ProductComponent, PlistComponent, CarComponent, PinfoComponent],
+  declarations: [ProductComponent, PlistComponent, CartComponent, PcontentComponent],
   imports: [
-    CommonModule
-  ],
-  exports: [ProductComponent]
+    CommonModule,
+    ProductRoutingModule
+  ]
 })
 export class ProductModule { }
